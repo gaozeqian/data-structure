@@ -7,8 +7,6 @@ namespace _00_LeetCode
     {
         static void Main(string[] args)
         {
-            var test = new _20_有效的括号();
-            test.IsValid("()");
             Console.WriteLine("Hello LeetCode!");
         }
     }
