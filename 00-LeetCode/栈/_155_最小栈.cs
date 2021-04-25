@@ -7,13 +7,13 @@ namespace _00_LeetCode.栈
     /*
      * https://leetcode-cn.com/problems/min-stack/
      */
-    public class MinStack
+    public class _155_最小栈
     {
         private List<int> stack;
         private List<int> min;
 
         /** initialize your data structure here. */
-        public MinStack()
+        public _155_最小栈()
         {
             stack = new List<int>();
             min = new List<int>();
