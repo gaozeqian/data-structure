@@ -4,6 +4,9 @@ using System.Text;
 
 namespace _00_LeetCode.栈
 {
+    /**
+     * https://leetcode-cn.com/problems/build-an-array-with-stack-operations/
+     */
     public class _1441_用栈操作构建数组
     {
         public IList<string> BuildArray(int[] target, int n)
