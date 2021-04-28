@@ -15,7 +15,29 @@ namespace _00_LeetCode.链表
             if (headA == null || headB == null)
                 return null;
 
-            // TODO
+            ListNode nodeA = headA, nodeB = headB;
+            while(nodeA != nodeB)
+            {
+                if(nodeA != null)
+                {
+                    nodeA = nodeA.next;
+                }
+                else
+                {
+                    nodeA = headB;
+                }
+
+                if(nodeB != null)
+                {
+                    nodeB = nodeB.next;
+                }
+                else
+                {
+                    nodeB = headA;
+                }
+            }
+
+            return nodeA;
         }
     }
 }
