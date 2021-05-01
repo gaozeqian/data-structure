@@ -12,7 +12,16 @@ namespace _00_LeetCode.数组
     {
         public bool ContainsDuplicate(int[] nums)
         {
-            //TODO
+            Dictionary<int, int> dic = new Dictionary<int, int>();
+
+            foreach (var num in nums)
+            {
+                if (dic.ContainsKey(num))
+                    return true;
+                else
+                    dic.Add(num, 1);
+            }
+
             return false;
         }
     }
