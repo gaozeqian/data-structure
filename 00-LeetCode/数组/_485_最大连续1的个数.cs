@@ -7,7 +7,7 @@ namespace _00_LeetCode.数组
     /// <summary>
     /// https://leetcode-cn.com/problems/max-consecutive-ones/
     /// </summary>
-    public class _485_最大连续_1_的个数
+    public class _485_最大连续1的个数
     {
         public int FindMaxConsecutiveOnes(int[] nums)
         {
