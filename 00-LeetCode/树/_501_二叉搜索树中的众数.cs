@@ -9,32 +9,47 @@ namespace _00_LeetCode.树
     /// </summary>
     public class _501_二叉搜索树中的众数
     {
+        private List<int> ans = new List<int>();
+        private int num, count, maxCount;
+
         public int[] FindMode(TreeNode root)
         {
-            HashSet<int> modes = new HashSet<int>();
-            FindMode(root, modes);
-            int[] ans = new int[modes.Count];
-            int index = 0;
-            foreach (int mode in modes)
-                ans[index++] = mode;
-            return ans;
+            dfs(root);
+            return ans.ToArray();
         }
 
-        private void FindMode(TreeNode root, HashSet<int> modes)
+        private void dfs(TreeNode root)
         {
             if (root == null)
                 return;
 
-            if (IsModes(root))
-                modes.Add(root.val);
-
-            FindMode(root.left, modes);
-            FindMode(root.right, modes);
+            dfs(root.left);
+            update(root.val);
+            dfs(root.right);
         }
 
-        private bool IsModes(TreeNode node)
+        private void update(int val)
         {
-            return node.val == node.left?.val || node.val == node.right?.val;
+            if(val == num)
+            {
+                count++;
+            }
+            else
+            {
+                num = val;
+                count = 1;
+            }
+
+            if(count == maxCount)
+            {
+                ans.Add(num);
+            }
+            else if(count > maxCount)
+            {
+                ans.Clear();
+                ans.Add(num);
+                maxCount = count;
+            }
         }
     }
 }
